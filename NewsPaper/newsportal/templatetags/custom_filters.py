@@ -3,9 +3,7 @@ from django import template
 
 register = template.Library()
 
-#bad_words = ('бяка', 'бяки', 'бука', 'буки', 'буками')
-
-# Регистрируем наш фильтр под именем currency, чтоб Django понимал,
+# Регистрируем наш фильтр под именем censor, чтоб Django понимал,
 # что это именно фильтр для шаблонов, а не простая функция.
 @register.filter()
 
@@ -22,5 +20,3 @@ def censor(value):
         if word.lower() in bad_words:
             value = value.replace(word, f"{word[0]}{'*' * (len(word) - 1)}")
     return value
-
-

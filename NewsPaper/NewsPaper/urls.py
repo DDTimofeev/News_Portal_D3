@@ -21,5 +21,8 @@ urlpatterns = [
     path('pages/', include('django.contrib.flatpages.urls')),
     # Делаем так, чтобы все адреса из нашего приложения (newsviewsapp/urls.py)
     # подключались к главному приложению с префиксом news/.
-    path('news/', include('newsviewsapp.urls')),
+    #path('news/', include('newsviewsapp.urls')),
+    # Делаем так, чтобы все адреса из нашего приложения (newsportal/urls.py)
+    # подключались к главному приложению с префиксом news/.
+    path('news/', include('newsportal.urls')),
 ]
